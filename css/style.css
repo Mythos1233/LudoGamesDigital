@@ -14,9 +14,8 @@ body{
 }
 
 .header{
-    height: 25vh;
-
-    background-image: linear-gradient(to bottom, #008cff, #6de4f900);
+    height: 20vh;
+    background-image: linear-gradient(to bottom, #00b3ff, #6de4f900);
 }
 
 .nav{
