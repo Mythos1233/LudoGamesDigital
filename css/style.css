@@ -5,7 +5,7 @@
     list-style: none;
 }
 
-@keyframes pulsar {
+@keyframes pulsar { 
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
@@ -50,7 +50,7 @@ body{
     list-style: none;
     display: flex;
     gap: 3vw;
-    margin: 0 auto;
+    margin-right: 20vw;
 }
 
 .nav-list a{
@@ -63,4 +63,20 @@ body{
 .nav-list a:hover{
     color: #FEE764;
     transition: 0.3s ease;
+}
+
+.nuvem{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 16%;
+    top: 32%;
+}
+
+.nuvem2{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    right: 40%;
+    top: 50%;
 }
