@@ -25,7 +25,7 @@ body{
 }
 
 .header{
-    height: 40vh;
+    height: 25vh;
     background-image: linear-gradient(to bottom, #00b3ff, #6de4f900);
 }
 
@@ -106,7 +106,6 @@ main{
     display: block;
     position: relative;
     z-index: -1;
-    margin-top: 30vh;
     width: 100vw;
     height: auto;
 }
