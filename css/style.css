@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    
+    cursor: none !important;
 }
 
 @keyframes pulsar { 
@@ -16,6 +16,10 @@ a{
     text-decoration: none;
 }
 
+a, button, .leitura {
+    cursor: none !important;
+}
+
 body{
     background-color: #6DE4F9;
     font-family: "Margarine", sans-serif;
@@ -24,6 +28,7 @@ body{
     display: flex;
     flex-direction: column;
     cursor: none;
+    cursor: hover none;
 }
 
 .header{
@@ -201,8 +206,8 @@ main{
 
 #cursor-personalizado{
     position: fixed;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
 
     background-image: url("../imgs/mouse.png");
     background-size: contain;
