@@ -1,23 +1,28 @@
 new window.VLibras.Widget('https://vlibras.gov.br/app');
 
     // função que faz o navegador falar
-    function falarTexto(e){
+    function falarTexto(e) {
 
-        // cancela falas anteriores
-        window.speechSynthesis.cancel();
+    window.speechSynthesis.cancel();
 
-        // pega o texto
-        const texto = e.target.innerText;
+    const texto = e.target.innerText;
 
-        // cria mensagem
-        const mensagem = new SpeechSynthesisUtterance(texto);
+    const mensagem = new SpeechSynthesisUtterance(texto);
+    mensagem.lang = 'pt-BR';
 
-        // idioma
-        mensagem.lang = "pt-BR";
+    // legenda
+    const legendaBox = document.querySelector(".legenda-box");
+    const textoLegenda = document.getElementById("texto-legenda");
 
-        // falar
-        window.speechSynthesis.speak(mensagem);
+    textoLegenda.innerText = texto;
+    legendaBox.classList.add("ativa");
+
+    mensagem.onend = function(){
+        legendaBox.classList.remove("ativa");
     }
+
+    window.speechSynthesis.speak(mensagem);
+}
 
     // leitura ao passar o mouse (menu)
     const elementosHover = document.querySelectorAll(".narra-texto");
