@@ -37,3 +37,16 @@ new window.VLibras.Widget('https://vlibras.gov.br/app');
     elementosClick.forEach(el => {
         el.addEventListener("click", falarTexto);
     });
+
+    window.addEventListener("DOMContentLoaded", function(){
+
+    const cursor = document.getElementById("cursor-personalizado");
+
+    document.addEventListener("mousemove", function(e){
+
+        cursor.style.left = (e.clientX - 40) + "px";
+        cursor.style.top = (e.clientY - 40) + "px";
+
+    });
+
+});
