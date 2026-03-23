@@ -1,9 +1,17 @@
+:root{
+  --z-fundo: 0;
+  --z-conteudo: 10;
+  --z-header: 100;
+  --z-overlay: 1000;
+  --z-topo: 9999;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    cursor: none !important;
+    
 }
 
 @keyframes pulsar { 
@@ -31,10 +39,11 @@ body{
 }
 
 .header-wrap{
-    height: 25vh;
+    height: auto;
     background-color: transparent;
     position: sticky;
     top: 0;
+    z-index: var(--z-header);
 }
 
 .grad-layer {
@@ -42,6 +51,7 @@ body{
   inset: 0;
   transition: opacity 0.55s ease;
   pointer-events: none;
+  z-index: var(--z-fundo);
 }
 
 
@@ -66,13 +76,15 @@ body{
     justify-content: space-between;
     align-items: center;
     margin-left: 30px;
-    z-index: 10;
+    margin-top: 0;
+    padding-top: 10px;
+    z-index: var(--z-header);
 }
 
 .nav .logo{
     position: relative;
-    z-index: 10;
-    height: 40vh;
+    height: auto;
+    z-index: var(--z-header);
 }
 
 .logo img{
@@ -90,7 +102,7 @@ body{
     gap: 3vw;
     margin-right: 27vw;
     height: 5vh;
-    z-index: 10;
+    z-index: var(--z-header);
 }
 
 .nav-list a{
@@ -111,7 +123,7 @@ body{
     position: absolute;
     left: 16%;
     top: 32%;
-    z-index: -1;
+    z-index: var(--z-fundo);
 }
 
 .nuvem2{
@@ -120,7 +132,7 @@ body{
     position: absolute;
     right: 40%;
     top: 40%;
-    z-index: -1;
+    z-index: var(--z-fundo);
 }
 
 .nuvem3{
@@ -129,19 +141,20 @@ body{
     position: absolute;
     right: 10%;
     top: 30%;
-    z-index: -1;
+    z-index: var(--z-fundo);
 }
 
 main{
     flex: 1;
     position: relative;
     display: inline-block;
+    z-index: var(--z-conteudo);
 }
 
 .morro{
     display: block;
     position: relative;
-    z-index: -1;
+    z-index: var(--z-fundo);
     margin-top: 50vh;
     width: 100vw;
     height: auto;
@@ -186,7 +199,7 @@ main{
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
-    z-index: 9999;
+    z-index: var(--z-overlay);
 }
 
 .legenda-box{
@@ -243,7 +256,7 @@ main{
     background-repeat: no-repeat;
 
     pointer-events: none;
-    z-index: 9999;
+    z-index: var(--z-topo);
 
     left: 0;
     top: 0;
@@ -260,7 +273,7 @@ main{
     position: fixed !important;
     top: 120px;
     right: 20px;
-    z-index: 9999;
+    z-index: var(--z-topo);
 }
 
 @keyframes pulso{
