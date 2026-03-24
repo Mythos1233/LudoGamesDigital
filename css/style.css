@@ -119,8 +119,8 @@ body {
   width: 500px;
   height: 500px;
   position: absolute;
-  left: 16%;
-  top: 32%;
+  left: 10%;
+  top: 17%;
   z-index: var(--z-fundo);
 }
 
@@ -129,7 +129,7 @@ body {
   height: 500px;
   position: absolute;
   right: 40%;
-  top: 40%;
+  top: 30%;
   z-index: var(--z-fundo);
 }
 
@@ -137,8 +137,8 @@ body {
   width: 500px;
   height: 500px;
   position: absolute;
-  right: 10%;
-  top: 30%;
+  right: 15%;
+  top: 15%;
   z-index: var(--z-fundo);
 }
 
@@ -154,9 +154,22 @@ main {
   display: block;
   position: relative;
   z-index: var(--z-fundo);
-  margin-top: 50vh;
   width: 100vw;
   height: auto;
+}
+
+.box{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 70%;
+  font-size: 2em;
+  color: white;
+  height: 50vh;
+  width: 80vw;
+  border: solid 50px #6B3A1D;
+  border-radius: 25%;
+  padding: 25px;
 }
 
 .texto-footer {
