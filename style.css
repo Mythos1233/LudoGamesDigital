@@ -6,7 +6,7 @@
   --z-topo:     9999;
 }
 
-/* ─── Reset ───────────────────────────────────────────────────── */
+/* ─── Reset ─────────────────────────────────────────────────────── */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -14,23 +14,17 @@
   list-style: none;
 }
 
-/* CORRIGIDO: cursor:none removido do seletor universal.
-   Aplicado apenas ao body para esconder o cursor nativo
-   e permitir que o cursor customizado via JS apareça no lugar.
-   Tecnologias assistivas baseadas em ponteiro (eye tracking,
-   head mouse, trackball) continuam funcionando pois o cursor
-   do sistema ainda é movido — só a imagem é substituída. */
+/* cursor:none só no body — herdado por todos os filhos.
+   Não aplicar no * para não poluir especificidade. */
 body {
   cursor: none;
 }
 
-/* CORRIGIDO: removido cursor:none individual de a, button e .leitura
-   (era redundante — já herdado do body — e poluía o CSS) */
 a {
   text-decoration: none;
 }
 
-/* ─── Animações ────────────────────────────────────────────────── */
+/* ─── Animações ──────────────────────────────────────────────────── */
 @keyframes pulsar {
   0%   { transform: scale(1); }
   50%  { transform: scale(1.05); }
@@ -43,20 +37,17 @@ a {
   100% { transform: scale(1); }
 }
 
-/* ─── Body ─────────────────────────────────────────────────────── */
+/* ─── Body ───────────────────────────────────────────────────────── */
 body {
   background-color: #6DE4F9;
   font-family: "Margarine", sans-serif;
   overflow-x: hidden;
-  /* CORRIGIDO: contain:paint evita bugs de scroll em Safari/iOS
-     causados pelo overflow-x:hidden isolado */
-  contain: paint;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* ─── Header ───────────────────────────────────────────────────── */
+/* ─── Header ─────────────────────────────────────────────────────── */
 .header-wrap {
   height: auto;
   background-color: transparent;
@@ -73,9 +64,9 @@ body {
   z-index: var(--z-fundo);
 }
 
-#azul   { background-image: linear-gradient(to bottom, rgba(0,179,255,1),    rgba(0,179,255,0));    opacity: 1; }
-#verde  { background-image: linear-gradient(to bottom, rgba(26,221,0,1),     rgba(26,221,0,0));     opacity: 0; }
-#marrom { background-image: linear-gradient(to bottom, rgba(130,80,30,0.90), rgba(130,80,30,0));    opacity: 0; }
+#azul   { background-image: linear-gradient(to bottom, rgba(0,179,255,1),    rgba(0,179,255,0));   opacity: 1; }
+#verde  { background-image: linear-gradient(to bottom, rgba(26,221,0,1),     rgba(26,221,0,0));    opacity: 0; }
+#marrom { background-image: linear-gradient(to bottom, rgba(130,80,30,0.90), rgba(130,80,30,0));   opacity: 0; }
 
 .nav {
   margin-inline: auto;
@@ -83,6 +74,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-left: 30px;
+  margin-top: 0;
   padding-top: 10px;
   z-index: var(--z-header);
 }
@@ -122,21 +114,35 @@ body {
   color: #FEE764;
 }
 
-/* ─── Nuvens ───────────────────────────────────────────────────── */
-/* CORRIGIDO: posições relativas mantidas, mas com clamp() para
-   melhor adaptação em telas menores */
-.nuvem, .nuvem2, .nuvem3 {
-  width: clamp(160px, 20vw, 300px);
-  height: auto;
+/* ─── Nuvens ─────────────────────────────────────────────────────── */
+.nuvem {
+  width: 300px;
+  height: 300px;
   position: absolute;
+  left: 16%;
+  top: 32%;
   z-index: var(--z-fundo);
 }
 
-.nuvem  { left: 16%;  top: 32%; }
-.nuvem2 { right: 40%; top: 40%; }
-.nuvem3 { right: 10%; top: 30%; }
+.nuvem2 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  right: 40%;
+  top: 40%;
+  z-index: var(--z-fundo);
+}
 
-/* ─── Main ─────────────────────────────────────────────────────── */
+.nuvem3 {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  right: 10%;
+  top: 30%;
+  z-index: var(--z-fundo);
+}
+
+/* ─── Main ───────────────────────────────────────────────────────── */
 main {
   flex: 1;
   position: relative;
@@ -153,26 +159,29 @@ main {
   height: auto;
 }
 
-/* ─── Footer ───────────────────────────────────────────────────── */
-.footer {
-  position: relative;
-  z-index: var(--z-conteudo); /* CORRIGIDO: usando variável em vez de 10 hardcoded */
-  min-height: 100px;          /* CORRIGIDO: min-height para não cortar conteúdo dinâmico */
-  width: 100vw;
-  background-color: rgba(90, 35, 21, 0.514);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;              /* padding garante respiro mesmo se o texto crescer */
-}
-
 .texto-footer {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 98%;
   font-size: 2em;
   color: white;
-  text-align: center;
 }
 
-/* ─── Elemento de leitura ──────────────────────────────────────── */
+/* ─── Footer ─────────────────────────────────────────────────────── */
+.footer {
+  position: relative;
+  z-index: var(--z-conteudo);
+  min-height: 100px;
+  width: 100vw;
+  background-color: rgba(90, 35, 21, 0.514);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/* ─── Leitura ────────────────────────────────────────────────────── */
 .leitura {
   border: 1px solid #ccc;
   padding: 10px;
@@ -184,7 +193,7 @@ main {
   background-color: #080202;
 }
 
-/* ─── Legenda de acessibilidade ────────────────────────────────── */
+/* ─── Legenda de acessibilidade ──────────────────────────────────── */
 #legenda-container {
   position: fixed;
   bottom: 40px;
@@ -223,7 +232,7 @@ main {
   animation: pulso 1s infinite;
 }
 
-/* ─── Cursor personalizado ─────────────────────────────────────── */
+/* ─── Cursor personalizado ───────────────────────────────────────── */
 #cursor-personalizado {
   position: fixed;
   width: 120px;
@@ -235,21 +244,4 @@ main {
   z-index: var(--z-topo);
   left: 0;
   top: 0;
-  /* Garante que se a imagem não carregar o elemento não ocupa espaço visível */
-  will-change: transform;
-}
-
-/* ─── VLibras ──────────────────────────────────────────────────── */
-[vw-access-button] {
-  width: 110px !important;
-  height: 110px !important;
-  border-radius: 20px;
-  transform: scale(1.1);
-}
-
-[vw] {
-  position: fixed !important;
-  top: 120px;
-  right: 20px;
-  z-index: var(--z-topo);
 }
