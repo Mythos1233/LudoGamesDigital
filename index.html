@@ -15,7 +15,7 @@
 <body>
 
     <!-- Filtro SVG para textura nas boxes -->
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <svg width="0" height="0" style="position:absolute">
     <defs>
         <filter id="textura-box" x="-5%" y="-10%" width="110%" height="130%">
         <feTurbulence type="turbulence" baseFrequency="0.10" numOctaves="4" seed="3" result="noise"/>
@@ -43,6 +43,11 @@
                     <li><a href="videos.html"    class="narra-texto">Vídeos</a></li>
                     <li><a href="quemsomos.html" class="narra-texto">Quem Somos</a></li>
                 </ul>
+
+                 <!-- Passarinho do header -->
+                <div class="passarinho" id="passarinho" aria-hidden="true">
+                    <img src="imgs/prikito1.png" alt="">
+                </div>
 
                 <!-- Botão de acessibilidade -->
                 <button class="btn-acessibilidade" id="btnAcessibilidade" aria-label="Abrir painel de acessibilidade" title="Acessibilidade">
@@ -155,11 +160,12 @@
 
     </aside>
 
-    <!-- Nuvens decorativas -->
+    <!-- Nuvens decorativas: aria-hidden para leitores de tela ignorarem -->
     <div aria-hidden="true">
         <img src="imgs/nuvem.png" alt="" class="nuvem">
         <img src="imgs/nuvem.png" alt="" class="nuvem2">
         <img src="imgs/nuvem.png" alt="" class="nuvem3">
+        <img src="imgs/prikito2.png" alt="" class="prikito2">
     </div>
 
     <main>
