@@ -187,11 +187,11 @@ body {
 }
 
 .prikito2{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   position: absolute;
-  right: 40%;
-  top: 25%;
+  right: 65%;
+  top: 30%;
   z-index: var(--z-fundo);
 }
 
@@ -268,7 +268,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;    
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 .pai{
