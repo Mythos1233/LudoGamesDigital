@@ -615,6 +615,30 @@ main {
   transform: scale(1.1);
 }
 
+.titulo-videos{
+  font-size: 3em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 75%;
+  left: 50%;
+  color: #fff;
+}
+
+.videos-yt{
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 83%;
+}
+
+.video-1, .video-2{
+  position: relative;
+  padding-inline: 20px;
+}
+
 .texto-footer {
   position: absolute;
   left: 50%;
