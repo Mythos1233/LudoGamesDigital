@@ -150,6 +150,7 @@ body {
   height: auto;
   z-index: var(--z-header);
   margin-top: 5vh;
+  margin-right: 5vw;
 }
 
 .logo img {
