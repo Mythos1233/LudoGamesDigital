@@ -1,4 +1,4 @@
-# 🎮 LudoGames Digital
+# 🎮 LudoJogos Digital
 
 <div align="center">
 
