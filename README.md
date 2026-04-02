@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![LudoGames](https://muriloo-barros.github.io/LudoGamesDigital/imgs/logo.png)
+![LudoGames](https://muriloo-barros.github.io/LudoJogosDigital/imgs/logo.png)
 
 **Plataforma de jogos educacionais acessíveis para crianças de 6 a 8 anos**
 
